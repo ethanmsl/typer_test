@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "typer-test"
+version = "0.1.0"
+description = ""
+authors = ["Ethan Skowronski-Lutz <33399972+ethanmsl@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "typer_test", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pyright]
+exclude = [".venv"]
+venvPath = "."
+venv = ".venv"
+
+# [tool.pylint]
+# disable = [
+#     "R0903",  # Too few public methods
+# ]
+
+[tool.pytest.ini_options]
+# adds the following paths to pythonpath, specified relative to root dir
+pythonpath = [
+    "src",
+]
