@@ -23,9 +23,21 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pyright]
-exclude = [".venv"]
+include = ["src"]
+exclude = [".venv",
+    "src/experimental",
+    "src/typestubs",
+  "**/__pycache__"
+]
 venvPath = "."
 venv = ".venv"
+typeCheckingMode = "strict"
+reportMissingImports = true
+reportMissingTypeStubs = true
+
+executionEnvironments = [
+  { root = "src" }
+]
 
 # [tool.pylint]
 # disable = [
